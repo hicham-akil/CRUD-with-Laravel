@@ -32,7 +32,7 @@ class AuhController extends Controller
         ]);
         if(Auth::attempt($validated)){
             Auth::user();
-            return redirect()->route('home');
+            return redirect()->route('tasks.show');
         }
         return redirect()->route('Auth.signin')->withErrors(['error' => 'Invalid credentials']);
     }
